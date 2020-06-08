@@ -1,0 +1,13 @@
+@use "@material/textfield";
+@import "colors";
+
+text-input{
+  display: block;
+  .mdc-text-field {
+    width: 100%;
+    background-color: transparent;
+  }
+ .mdc-text-field.mdc-text-field--focused{
+    @include textfield.label-color($color-primary);
+ }
+}

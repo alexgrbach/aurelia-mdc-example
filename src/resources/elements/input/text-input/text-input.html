@@ -1,0 +1,29 @@
+<template>
+  <label class="
+  mdc-text-field
+  mdc-text-field--${outlined ? 'outlined' : 'filled'}
+  ${label ? '' : 'mdc-text-field--no-label'}">
+    <i if.bind="leadingicon" class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0"
+      role="button">${leadingicon}</i>
+    <span if.bind="prefix" class="mdc-text-field__affix mdc-text-field__affix--prefix">${prefix}</span>
+    <input value.bind="value" required="${required}" class="mdc-text-field__input" type="${type}"
+      placeholder="${placeholder}" maxlength="${maxlength}" disabled="${disabled}" max="${max}" min="${min}"
+      step="${step}" autocomplete="${autocomplete ? 'yes' : 'no'}">
+    <span if.bind="suffix" class="mdc-text-field__affix mdc-text-field__affix--suffix">${suffix}</span>
+    <i if.bind="trailingicon" class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="0"
+      role="button">${trailingicon}</i>
+    <span if.bind="outlined" class="mdc-notched-outline">
+      <span class="mdc-notched-outline__leading"></span>
+      <span class="mdc-notched-outline__notch">
+        <span if.bind="label" class="mdc-floating-label">${label}</span>
+      </span>
+      <span class="mdc-notched-outline__trailing"></span>
+    </span>
+    <span if.bind="!outlined && label" class="mdc-floating-label">${label}</span>
+    <span if.bind="!outlined" class="mdc-line-ripple"></span>
+  </label>
+  <div class="mdc-text-field-helper-line" if.bind="counter || helptext">
+    <div class="mdc-text-field-helper-text" if.bind="helptext" aria-hidden="true">${helptext}</div>
+    <div class="mdc-text-field-character-counter" if.bind="counter"></div>
+  </div>
+</template>
